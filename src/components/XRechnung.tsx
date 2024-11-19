@@ -195,6 +195,23 @@ export const XRechnung = () => {
             .up()
             .up();
 
+        // Legal Monetary Total
+        invoice
+            .ele('cac:LegalMonetaryTotal')
+            .ele('cbc:LineExtensionAmount', { currencyID: formData.currencyCode })
+            .txt(formData.legalMonetaryTotal.lineExtensionAmount.toFixed(2))
+            .up()
+            .ele('cbc:TaxExclusiveAmount', { currencyID: formData.currencyCode })
+            .txt(formData.legalMonetaryTotal.taxExclusiveAmount.toFixed(2))
+            .up()
+            .ele('cbc:TaxInclusiveAmount', { currencyID: formData.currencyCode })
+            .txt(formData.legalMonetaryTotal.taxInclusiveAmount.toFixed(2))
+            .up()
+            .ele('cbc:PayableAmount', { currencyID: formData.currencyCode })
+            .txt(formData.legalMonetaryTotal.payableAmount.toFixed(2))
+            .up()
+            .up();
+
         // Invoice Lines
         formData.items.forEach((item, index) => {
             invoice
@@ -220,23 +237,6 @@ export const XRechnung = () => {
                 .up()
                 .up();
         });
-
-        // Legal Monetary Total
-        invoice
-            .ele('cac:LegalMonetaryTotal')
-            .ele('cbc:LineExtensionAmount', { currencyID: formData.currencyCode })
-            .txt(formData.legalMonetaryTotal.lineExtensionAmount.toFixed(2))
-            .up()
-            .ele('cbc:TaxExclusiveAmount', { currencyID: formData.currencyCode })
-            .txt(formData.legalMonetaryTotal.taxExclusiveAmount.toFixed(2))
-            .up()
-            .ele('cbc:TaxInclusiveAmount', { currencyID: formData.currencyCode })
-            .txt(formData.legalMonetaryTotal.taxInclusiveAmount.toFixed(2))
-            .up()
-            .ele('cbc:PayableAmount', { currencyID: formData.currencyCode })
-            .txt(formData.legalMonetaryTotal.payableAmount.toFixed(2))
-            .up()
-            .up();
 
         const xmlString = invoice.end({ prettyPrint: true });
         setXmlOutput(xmlString);
