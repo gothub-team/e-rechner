@@ -4,60 +4,60 @@
     xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
     <cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0</cbc:CustomizationID>
     <cbc:ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</cbc:ProfileID>
-    <cbc:ID>123456XX</cbc:ID>
+    <cbc:ID>TEST</cbc:ID>
     <cbc:IssueDate>2024-11-19</cbc:IssueDate>
     <cbc:DueDate>2024-11-30</cbc:DueDate>
     <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
     <cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
-    <cbc:BuyerReference>04011000-12345-03</cbc:BuyerReference>
+    <cbc:BuyerReference>123456</cbc:BuyerReference>
     <cac:AccountingSupplierParty>
         <cac:Party>
-            <cbc:EndpointID schemeID="EM">seller@seller.com</cbc:EndpointID>
+            <cbc:EndpointID schemeID="EM">TEST</cbc:EndpointID>
             <cac:PartyName>
-                <cbc:Name>[Seller trading name]</cbc:Name>
+                <cbc:Name>TEST</cbc:Name>
             </cac:PartyName>
             <cac:PostalAddress>
-                <cbc:StreetName>TEXT</cbc:StreetName>
-                <cbc:CityName>TEXT</cbc:CityName>
-                <cbc:PostalZone>TEXT</cbc:PostalZone>
+                <cbc:StreetName>TEST</cbc:StreetName>
+                <cbc:CityName>TEST</cbc:CityName>
+                <cbc:PostalZone>TEST</cbc:PostalZone>
                 <cac:Country>
                     <cbc:IdentificationCode>DE</cbc:IdentificationCode>
                 </cac:Country>
             </cac:PostalAddress>
             <cac:PartyTaxScheme>
-                <cbc:CompanyID>DE 123456789</cbc:CompanyID>
+                <cbc:CompanyID>DE 1234123</cbc:CompanyID>
                 <cac:TaxScheme>
                     <cbc:ID>VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:PartyTaxScheme>
             <cac:PartyLegalEntity>
-                <cbc:RegistrationName>[Seller name]</cbc:RegistrationName>
-                <cbc:CompanyID>[HRA-Eintrag]</cbc:CompanyID>
+                <cbc:RegistrationName>TEST</cbc:RegistrationName>
+                <cbc:CompanyID>HRB123123</cbc:CompanyID>
                 <cbc:CompanyLegalForm>123/456/7890, HRA-Eintrag in […]</cbc:CompanyLegalForm>
             </cac:PartyLegalEntity>
             <cac:Contact>
-                <cbc:Name>nicht vorhanden</cbc:Name>
-                <cbc:Telephone>+49 1234-5678</cbc:Telephone>
-                <cbc:ElectronicMail>seller@email.de</cbc:ElectronicMail>
+                <cbc:Name>TEST</cbc:Name>
+                <cbc:Telephone>019123123</cbc:Telephone>
+                <cbc:ElectronicMail>asd@asd.de</cbc:ElectronicMail>
             </cac:Contact>
         </cac:Party>
     </cac:AccountingSupplierParty>
     <cac:AccountingCustomerParty>
         <cac:Party>
-            <cbc:EndpointID schemeID="EM">buyer@buyer.com</cbc:EndpointID>
+            <cbc:EndpointID schemeID="EM">TEST</cbc:EndpointID>
             <cac:PartyIdentification>
-                <cbc:ID>[Buyer identifier]</cbc:ID>
+                <cbc:ID>TEST</cbc:ID>
             </cac:PartyIdentification>
             <cac:PostalAddress>
-                <cbc:StreetName>TEXTTEXT</cbc:StreetName>
-                <cbc:CityName>TEXTTEXT</cbc:CityName>
-                <cbc:PostalZone>TEXTTEXT</cbc:PostalZone>
+                <cbc:StreetName>TEST</cbc:StreetName>
+                <cbc:CityName>TEST</cbc:CityName>
+                <cbc:PostalZone>TEST</cbc:PostalZone>
                 <cac:Country>
                     <cbc:IdentificationCode>DE</cbc:IdentificationCode>
                 </cac:Country>
             </cac:PostalAddress>
             <cac:PartyLegalEntity>
-                <cbc:RegistrationName>[Buyer name]</cbc:RegistrationName>
+                <cbc:RegistrationName>TEST</cbc:RegistrationName>
             </cac:PartyLegalEntity>
         </cac:Party>
     </cac:AccountingCustomerParty>
@@ -65,9 +65,9 @@
         <cbc:PaymentMeansCode>58</cbc:PaymentMeansCode>
         <cac:PayeeFinancialAccount>
             <cbc:ID>DE75512108001245126199</cbc:ID>
-            <cbc:Name>123123</cbc:Name>
+            <cbc:Name>TEST</cbc:Name>
             <cac:FinancialInstitutionBranch>
-                <cbc:ID>123123</cbc:ID>
+                <cbc:ID>TEST</cbc:ID>
             </cac:FinancialInstitutionBranch>
         </cac:PayeeFinancialAccount>
     </cac:PaymentMeans>
@@ -95,11 +95,11 @@
         <cbc:PayableAmount currencyID="EUR">119.00</cbc:PayableAmount>
     </cac:LegalMonetaryTotal>
     <cac:InvoiceLine>
-        <cbc:ID>Porto + Versandkosten</cbc:ID>
+        <cbc:ID>TEST</cbc:ID>
         <cbc:InvoicedQuantity unitCode="XPP">1</cbc:InvoicedQuantity>
         <cbc:LineExtensionAmount currencyID="EUR">100.00</cbc:LineExtensionAmount>
         <cac:Item>
-            <cbc:Name>Porto + Versandkosten</cbc:Name>
+            <cbc:Name>TEST</cbc:Name>
             <cac:ClassifiedTaxCategory>
                 <cbc:ID>S</cbc:ID>
                 <cbc:Percent>19</cbc:Percent>

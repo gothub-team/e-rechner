@@ -4,49 +4,58 @@ import { create } from 'xmlbuilder2';
 
 export const XRechnung = () => {
     const [formData, setFormData] = createStore({
-        invoiceNumber: '',
-        issueDate: '',
-        dueDate: '',
+        invoiceNumber: 'TEST',
+        issueDate: '2024-11-19',
+        dueDate: '2024-11-30',
         currencyCode: 'EUR',
+        buyerReference: '123456',
         supplier: {
-            name: '',
-            id: '',
-            streetName: '',
-            cityName: '',
-            postalZone: '',
-            country: '',
+            name: 'TEST',
+            id: 'TEST',
+            streetName: 'TEST',
+            cityName: 'TEST',
+            postalZone: 'TEST',
+            country: 'DE',
+            vatNumber: 'DE 1234123',
+            registrationNumber: 'HRB123123',
+            legalForm: '123/456/7890, HRA-Eintrag in […]',
+            contact: {
+                name: 'TEST',
+                phone: '019123123',
+                email: 'asd@asd.de',
+            },
         },
         customer: {
-            name: '',
-            id: '',
-            streetName: '',
-            cityName: '',
-            postalZone: '',
-            country: '',
+            name: 'TEST',
+            id: 'TEST',
+            streetName: 'TEST',
+            cityName: 'TEST',
+            postalZone: 'TEST',
+            country: 'DE',
         },
         items: [
             {
-                description: '',
+                description: 'TEST',
                 quantity: 1,
-                unitPrice: 0,
-                lineExtensionAmount: 0,
-                taxAmount: 0,
-                taxPercent: 0,
+                unitPrice: 100,
+                taxAmount: 19,
+                taxPercent: 19,
             },
         ],
         legalMonetaryTotal: {
-            lineExtensionAmount: 0,
-            taxExclusiveAmount: 0,
-            taxInclusiveAmount: 0,
-            payableAmount: 0,
+            lineExtensionAmount: 100,
+            taxExclusiveAmount: 100,
+            taxInclusiveAmount: 119,
+            payableAmount: 119,
         },
         paymentMeans: {
-            paymentMeansCode: '',
+            paymentMeansCode: '58',
             payeeFinancialAccount: {
-                id: '',
-                name: '',
-                financialInstitutionBranch: '',
+                id: 'DE75512108001245126199',
+                name: 'TEST',
+                financialInstitutionBranch: 'TEST',
             },
+            paymentTerms: 'Zahlbar sofort ohne Abzug.',
         },
     });
 
@@ -67,7 +76,6 @@ export const XRechnung = () => {
                 description: '',
                 quantity: 1,
                 unitPrice: 0,
-                lineExtensionAmount: 0,
                 taxAmount: 0,
                 taxPercent: 0,
             },
@@ -83,17 +91,13 @@ export const XRechnung = () => {
 
     const generateXml = () => {
         const invoice = create()
-            .ele('ns0:Invoice', {
-                xmlns: 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2',
+            .ele('ubl:Invoice', {
+                'xmlns:ubl': 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2',
                 'xmlns:cac': 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2',
                 'xmlns:cbc': 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2',
-                'xmlns:ns0': 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2',
             })
-            .ele('cbc:UBLVersionID')
-            .txt('2.1')
-            .up()
             .ele('cbc:CustomizationID')
-            .txt('urn:cen.eu:en16931:2017')
+            .txt('urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0')
             .up()
             .ele('cbc:ProfileID')
             .txt('urn:fdc:peppol.eu:2017:poacc:billing:01:1.0')
@@ -112,6 +116,9 @@ export const XRechnung = () => {
             .up()
             .ele('cbc:DocumentCurrencyCode')
             .txt(formData.currencyCode)
+            .up()
+            .ele('cbc:BuyerReference')
+            .txt(formData.buyerReference)
             .up();
 
         // Supplier Party
@@ -119,6 +126,7 @@ export const XRechnung = () => {
             .ele('cac:AccountingSupplierParty')
             .ele('cac:Party')
             .ele('cbc:EndpointID')
+            .att('schemeID', 'EM')
             .txt(formData.supplier.id)
             .up()
             .ele('cac:PartyName')
@@ -142,17 +150,49 @@ export const XRechnung = () => {
             .up()
             .up()
             .up()
+            .ele('cac:PartyTaxScheme')
+            .ele('cbc:CompanyID')
+            .txt(formData.supplier.vatNumber)
+            .up()
+            .ele('cac:TaxScheme')
+            .ele('cbc:ID')
+            .txt('VAT')
+            .up()
+            .up()
+            .up()
+            .ele('cac:PartyLegalEntity')
+            .ele('cbc:RegistrationName')
+            .txt(formData.supplier.name)
+            .up()
+            .ele('cbc:CompanyID')
+            .txt(formData.supplier.registrationNumber)
+            .up()
+            .ele('cbc:CompanyLegalForm')
+            .txt(formData.supplier.legalForm)
+            .up()
+            .up()
+            .ele('cac:Contact')
+            .ele('cbc:Name')
+            .txt(formData.supplier.contact.name)
+            .up()
+            .ele('cbc:Telephone')
+            .txt(formData.supplier.contact.phone)
+            .up()
+            .ele('cbc:ElectronicMail')
+            .txt(formData.supplier.contact.email)
+            .up()
+            .up()
+            .up()
             .up();
-
         // Customer Party
         const accountingCustomerParty = invoice
             .ele('cac:AccountingCustomerParty')
             .ele('cac:Party')
-            .ele('cbc:EndpointID')
+            .ele('cbc:EndpointID', { schemeID: 'EM' })
             .txt(formData.customer.id)
             .up()
-            .ele('cac:PartyName')
-            .ele('cbc:Name')
+            .ele('cac:PartyIdentification')
+            .ele('cbc:ID')
             .txt(formData.customer.name)
             .up()
             .up()
@@ -169,6 +209,12 @@ export const XRechnung = () => {
             .ele('cac:Country')
             .ele('cbc:IdentificationCode')
             .txt(formData.customer.country)
+            .up()
+            .up()
+            .up()
+            .ele('cac:PartyLegalEntity')
+            .ele('cbc:RegistrationName')
+            .txt(formData.customer.name)
             .up()
             .up()
             .up()
@@ -190,6 +236,41 @@ export const XRechnung = () => {
             .ele('cac:FinancialInstitutionBranch')
             .ele('cbc:ID')
             .txt(formData.paymentMeans.payeeFinancialAccount.financialInstitutionBranch)
+            .up()
+            .up()
+            .up()
+            .up();
+
+        const paymentTerms = invoice
+            .ele('cac:PaymentTerms')
+            .ele('cbc:Note')
+            .txt(formData.paymentMeans.paymentTerms)
+            .up()
+            .up();
+
+        const taxTotal = invoice
+            .ele('cac:TaxTotal')
+            .ele('cbc:TaxAmount', { currencyID: formData.currencyCode })
+            .txt('19.00')
+            .up()
+            .ele('cac:TaxSubtotal')
+            .ele('cbc:TaxableAmount', { currencyID: formData.currencyCode })
+            .txt(formData.legalMonetaryTotal.taxExclusiveAmount.toFixed(2))
+            .up()
+            .ele('cbc:TaxAmount', { currencyID: formData.currencyCode })
+            .txt((formData.legalMonetaryTotal.taxExclusiveAmount * 0.19).toFixed(2))
+            .up()
+            .ele('cac:TaxCategory')
+            .ele('cbc:ID')
+            .txt('S')
+            .up()
+            .ele('cbc:Percent')
+            .txt('19')
+            .up()
+            .ele('cac:TaxScheme')
+            .ele('cbc:ID')
+            .txt('VAT')
+            .up()
             .up()
             .up()
             .up()
@@ -217,17 +298,30 @@ export const XRechnung = () => {
             invoice
                 .ele('cac:InvoiceLine')
                 .ele('cbc:ID')
-                .txt((index + 1).toString())
+                .txt(item.description)
                 .up()
-                .ele('cbc:InvoicedQuantity', { unitCode: 'EA' })
+                .ele('cbc:InvoicedQuantity', { unitCode: 'XPP' })
                 .txt(item.quantity.toString())
                 .up()
                 .ele('cbc:LineExtensionAmount', { currencyID: formData.currencyCode })
-                .txt(item.lineExtensionAmount.toFixed(2))
+                .txt(item.unitPrice.toFixed(2))
                 .up()
                 .ele('cac:Item')
-                .ele('cbc:Description')
+                .ele('cbc:Name')
                 .txt(item.description)
+                .up()
+                .ele('cac:ClassifiedTaxCategory')
+                .ele('cbc:ID')
+                .txt('S')
+                .up()
+                .ele('cbc:Percent')
+                .txt('19')
+                .up()
+                .ele('cac:TaxScheme')
+                .ele('cbc:ID')
+                .txt('VAT')
+                .up()
+                .up()
                 .up()
                 .up()
                 .ele('cac:Price')
@@ -238,9 +332,32 @@ export const XRechnung = () => {
                 .up();
         });
 
-        const xmlString = invoice.end({ prettyPrint: true });
+        const xmlString = invoice.end({ prettyPrint: true, indent: '    ' });
         setXmlOutput(xmlString);
+        downloadXml();
     };
+
+    // Function to trigger the download
+    function downloadXml() {
+        const xml = xmlOutput();
+
+        if (!xml) return;
+        // Create a Blob from the string
+        const blob = new Blob([xml], { type: 'application/xml' });
+
+        // Create a temporary anchor element
+        const anchor = document.createElement('a');
+        anchor.href = URL.createObjectURL(blob);
+
+        // Specify the filename
+        anchor.download = 'invoice.xml';
+
+        // Trigger the download
+        anchor.click();
+
+        // Clean up
+        URL.revokeObjectURL(anchor.href);
+    }
 
     return (
         <div>
@@ -282,6 +399,14 @@ export const XRechnung = () => {
                     <input
                         value={formData.currencyCode}
                         onInput={(e) => handleInputChange('currencyCode', e.currentTarget.value)}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Buyer Reference</label>
+                    <input
+                        value={formData.buyerReference}
+                        onInput={(e) => handleInputChange('buyerReference', e.currentTarget.value)}
                         required
                     />
                 </div>
@@ -333,6 +458,56 @@ export const XRechnung = () => {
                     <input
                         value={formData.supplier.country}
                         onInput={(e) => handleInputChange('supplier.country', e.currentTarget.value)}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>VAT Number</label>
+                    <input
+                        value={formData.supplier.vatNumber}
+                        onInput={(e) => handleInputChange('supplier.vatNumber', e.currentTarget.value)}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Registration Number</label>
+                    <input
+                        value={formData.supplier.registrationNumber}
+                        onInput={(e) => handleInputChange('supplier.registrationNumber', e.currentTarget.value)}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Legal Form</label>
+                    <input
+                        value={formData.supplier.legalForm}
+                        onInput={(e) => handleInputChange('supplier.legalForm', e.currentTarget.value)}
+                        required
+                    />
+                </div>
+
+                <h3>Contact</h3>
+                <div>
+                    <label>Name</label>
+                    <input
+                        value={formData.supplier.contact.name}
+                        onInput={(e) => handleInputChange('supplier.contact.name', e.currentTarget.value)}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Phone</label>
+                    <input
+                        value={formData.supplier.contact.phone}
+                        onInput={(e) => handleInputChange('supplier.contact.phone', e.currentTarget.value)}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>E-Mail</label>
+                    <input
+                        value={formData.supplier.contact.email}
+                        onInput={(e) => handleInputChange('supplier.contact.email', e.currentTarget.value)}
                         required
                     />
                 </div>
@@ -465,20 +640,6 @@ export const XRechnung = () => {
                                 required
                             />
 
-                            <label>Line Extension Amount</label>
-                            <input
-                                type="number"
-                                step="0.01"
-                                value={item.lineExtensionAmount}
-                                onInput={(e) =>
-                                    handleInputChange(
-                                        `items.${index()}.lineExtensionAmount`,
-                                        parseFloat(e.currentTarget.value),
-                                    )
-                                }
-                                required
-                            />
-
                             {/* Additional item fields */}
                             <button type="button" onClick={() => removeItem(index())}>
                                 Remove Item
@@ -556,7 +717,7 @@ export const XRechnung = () => {
             {xmlOutput() && (
                 <div>
                     <h2>Generated XML</h2>
-                    <pre>{xmlOutput()}</pre>
+                    <pre style={{ 'text-align': 'left' }}>{xmlOutput()}</pre>
                 </div>
             )}
         </div>
