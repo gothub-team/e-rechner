@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<ns0:Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+    xmlns:ns0="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
+    <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+    <cbc:CustomizationID>urn:cen.eu:en16931:2017</cbc:CustomizationID>
+    <cbc:ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</cbc:ProfileID>
+    <cbc:ID>123</cbc:ID>
+    <cbc:IssueDate>2024-11-19</cbc:IssueDate>
+    <cbc:DueDate>2024-11-30</cbc:DueDate>
+    <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+    <cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+    <cac:AccountingSupplierParty>
+        <cac:Party>
+            <cbc:EndpointID>123</cbc:EndpointID>
+            <cac:PartyName>
+                <cbc:Name>123</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:StreetName>123</cbc:StreetName>
+                <cbc:CityName>123</cbc:CityName>
+                <cbc:PostalZone>123</cbc:PostalZone>
+                <cac:Country>
+                    <cbc:IdentificationCode>123</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+        </cac:Party>
+    </cac:AccountingSupplierParty>
+    <cac:AccountingCustomerParty>
+        <cac:Party>
+            <cbc:EndpointID>123123</cbc:EndpointID>
+            <cac:PartyName>
+                <cbc:Name>123123</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:StreetName>123123</cbc:StreetName>
+                <cbc:CityName>123123</cbc:CityName>
+                <cbc:PostalZone>123123</cbc:PostalZone>
+                <cac:Country>
+                    <cbc:IdentificationCode>123123</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+        </cac:Party>
+    </cac:AccountingCustomerParty>
+    <cac:PaymentMeans>
+        <cbc:PaymentMeansCode>123123</cbc:PaymentMeansCode>
+        <cac:PayeeFinancialAccount>
+            <cbc:ID>123123</cbc:ID>
+            <cbc:Name>123123</cbc:Name>
+            <cac:FinancialInstitutionBranch>
+                <cbc:ID>123123</cbc:ID>
+            </cac:FinancialInstitutionBranch>
+        </cac:PayeeFinancialAccount>
+    </cac:PaymentMeans>
+    <cac:LegalMonetaryTotal>
+        <cbc:LineExtensionAmount currencyID="EUR">123.00</cbc:LineExtensionAmount>
+        <cbc:TaxExclusiveAmount currencyID="EUR">123.00</cbc:TaxExclusiveAmount>
+        <cbc:TaxInclusiveAmount currencyID="EUR">123.00</cbc:TaxInclusiveAmount>
+        <cbc:PayableAmount currencyID="EUR">123.00</cbc:PayableAmount>
+    </cac:LegalMonetaryTotal>
+    <cac:InvoiceLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="EUR">0.00</cbc:LineExtensionAmount>
+        <cac:Item>
+            <cbc:Description>123</cbc:Description>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="EUR">1.00</cbc:PriceAmount>
+        </cac:Price>
+    </cac:InvoiceLine>
+</ns0:Invoice>
