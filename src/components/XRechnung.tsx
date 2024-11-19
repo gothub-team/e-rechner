@@ -35,19 +35,16 @@ export const XRechnung = () => {
         },
         items: [
             {
-                description: 'TEST',
+                description: 'Eine Sache',
                 quantity: 1,
-                unitPrice: 100,
-                taxAmount: 19,
-                taxPercent: 19,
+                unitPrice: 50,
+            },
+            {
+                description: 'Andere Sache',
+                quantity: 2,
+                unitPrice: 25,
             },
         ],
-        legalMonetaryTotal: {
-            lineExtensionAmount: 100,
-            taxExclusiveAmount: 100,
-            taxInclusiveAmount: 119,
-            payableAmount: 119,
-        },
         paymentMeans: {
             paymentMeansCode: '58',
             payeeFinancialAccount: {
@@ -60,6 +57,9 @@ export const XRechnung = () => {
     });
 
     const [xmlOutput, setXmlOutput] = createSignal<string | null>(null);
+
+    const getTaxExclusiveAmount = () =>
+        formData.items.map((item) => item.quantity * item.unitPrice).reduce((a, b) => a + b, 0);
 
     const handleInputChange = (path: string, value: unknown) => {
         const keys: unknown[] = path.split('.');
@@ -76,8 +76,6 @@ export const XRechnung = () => {
                 description: '',
                 quantity: 1,
                 unitPrice: 0,
-                taxAmount: 0,
-                taxPercent: 0,
             },
         ]);
     };
@@ -248,17 +246,19 @@ export const XRechnung = () => {
             .up()
             .up();
 
+        const taxExclusiveAmount = getTaxExclusiveAmount();
+
         const taxTotal = invoice
             .ele('cac:TaxTotal')
             .ele('cbc:TaxAmount', { currencyID: formData.currencyCode })
-            .txt('19.00')
+            .txt((taxExclusiveAmount * 0.19).toFixed(2))
             .up()
             .ele('cac:TaxSubtotal')
             .ele('cbc:TaxableAmount', { currencyID: formData.currencyCode })
-            .txt(formData.legalMonetaryTotal.taxExclusiveAmount.toFixed(2))
+            .txt(taxExclusiveAmount.toFixed(2))
             .up()
             .ele('cbc:TaxAmount', { currencyID: formData.currencyCode })
-            .txt((formData.legalMonetaryTotal.taxExclusiveAmount * 0.19).toFixed(2))
+            .txt((taxExclusiveAmount * 0.19).toFixed(2))
             .up()
             .ele('cac:TaxCategory')
             .ele('cbc:ID')
@@ -280,16 +280,16 @@ export const XRechnung = () => {
         invoice
             .ele('cac:LegalMonetaryTotal')
             .ele('cbc:LineExtensionAmount', { currencyID: formData.currencyCode })
-            .txt(formData.legalMonetaryTotal.lineExtensionAmount.toFixed(2))
+            .txt(taxExclusiveAmount.toFixed(2))
             .up()
             .ele('cbc:TaxExclusiveAmount', { currencyID: formData.currencyCode })
-            .txt(formData.legalMonetaryTotal.taxExclusiveAmount.toFixed(2))
+            .txt(taxExclusiveAmount.toFixed(2))
             .up()
             .ele('cbc:TaxInclusiveAmount', { currencyID: formData.currencyCode })
-            .txt(formData.legalMonetaryTotal.taxInclusiveAmount.toFixed(2))
+            .txt((taxExclusiveAmount * 1.19).toFixed(2))
             .up()
             .ele('cbc:PayableAmount', { currencyID: formData.currencyCode })
-            .txt(formData.legalMonetaryTotal.payableAmount.toFixed(2))
+            .txt((taxExclusiveAmount * 1.19).toFixed(2))
             .up()
             .up();
 
@@ -304,7 +304,7 @@ export const XRechnung = () => {
                 .txt(item.quantity.toString())
                 .up()
                 .ele('cbc:LineExtensionAmount', { currencyID: formData.currencyCode })
-                .txt(item.unitPrice.toFixed(2))
+                .txt((item.unitPrice * item.quantity).toFixed(2))
                 .up()
                 .ele('cac:Item')
                 .ele('cbc:Name')
@@ -654,61 +654,16 @@ export const XRechnung = () => {
 
                 <h2>Monetary Totals</h2>
                 <div>
-                    <label>Line Extension Amount</label>
-                    <input
-                        type="number"
-                        step="0.01"
-                        value={formData.legalMonetaryTotal.lineExtensionAmount}
-                        onInput={(e) =>
-                            handleInputChange(
-                                'legalMonetaryTotal.lineExtensionAmount',
-                                parseFloat(e.currentTarget.value),
-                            )
-                        }
-                        required
-                    />
-                </div>
-                <div>
                     <label>Tax Exclusive Amount</label>
-                    <input
-                        type="number"
-                        step="0.01"
-                        value={formData.legalMonetaryTotal.taxExclusiveAmount}
-                        onInput={(e) =>
-                            handleInputChange(
-                                'legalMonetaryTotal.taxExclusiveAmount',
-                                parseFloat(e.currentTarget.value),
-                            )
-                        }
-                        required
-                    />
+                    <div>{getTaxExclusiveAmount().toFixed(2)} €</div>
                 </div>
                 <div>
                     <label>Tax Inclusive Amount</label>
-                    <input
-                        type="number"
-                        step="0.01"
-                        value={formData.legalMonetaryTotal.taxInclusiveAmount}
-                        onInput={(e) =>
-                            handleInputChange(
-                                'legalMonetaryTotal.taxInclusiveAmount',
-                                parseFloat(e.currentTarget.value),
-                            )
-                        }
-                        required
-                    />
+                    <div>{(getTaxExclusiveAmount() * 1.19).toFixed(2)} €</div>
                 </div>
                 <div>
                     <label>Payable Amount</label>
-                    <input
-                        type="number"
-                        step="0.01"
-                        value={formData.legalMonetaryTotal.payableAmount}
-                        onInput={(e) =>
-                            handleInputChange('legalMonetaryTotal.payableAmount', parseFloat(e.currentTarget.value))
-                        }
-                        required
-                    />
+                    <div>{(getTaxExclusiveAmount() * 1.19).toFixed(2)} €</div>
                 </div>
 
                 <button type="submit">Generate XML</button>
