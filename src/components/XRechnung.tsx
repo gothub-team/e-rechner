@@ -18,6 +18,7 @@ export const XRechnung = () => {
     const handleInputChange = (path: string, value: unknown) => {
         const keys: unknown[] = path.split('.');
         keys.push(value);
+        // @ts-ignore
         setFormData(...keys);
         console.log(formData);
     };
