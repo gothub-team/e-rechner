@@ -2,6 +2,7 @@ import { Component, createSignal, For } from 'solid-js';
 import { createStore } from 'solid-js/store';
 import { create } from 'xmlbuilder2';
 import { Input } from './Input';
+import { CurrencyInput } from './CurrencyInput';
 
 export const XRechnung: Component = () => {
     const [formData, setFormData] = createStore({
@@ -63,7 +64,7 @@ export const XRechnung: Component = () => {
         formData.items.map((item) => item.quantity * item.unitPrice).reduce((a, b) => a + b, 0);
 
     const handleInputChange = (path: string, value: unknown) => {
-        console.log(path, typeof value);
+        console.log(path, typeof value, value);
         const keys: unknown[] = path.split('.');
         keys.push(value);
         // @ts-ignore
@@ -535,11 +536,10 @@ export const XRechnung: Component = () => {
                             />
 
                             <label>Unit Price</label>
-                            <Input
+                            <CurrencyInput
                                 path={`items.${index()}.unitPrice`}
                                 data={formData}
-                                type="number"
-                                step="0.01"
+                                type="text"
                                 onInputPath={handleInputChange}
                                 required
                             />
