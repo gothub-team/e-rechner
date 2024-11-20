@@ -736,7 +736,7 @@ export const XRechnung: Component = () => {
                         </p>
                         <p>
                             Künftig werden hier weitere Funktionen zum Öffnen und Überprüfen empfangener E-Rechnungen
-                            bereitgestellt werden.
+                            bereitgestellt.
                         </p>
                     </div>
                     <div class="flex">
