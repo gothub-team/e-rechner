@@ -545,7 +545,7 @@ export const XRechnung: Component = () => {
                     <h2 class="mt-12 text-left text-2xl">Positionen</h2>
                     <For each={formData.items}>
                         {(item, index) => (
-                            <div class="flex flex-row gap-4">
+                            <div class="flex flex-row items-end gap-4">
                                 <div class="flex min-w-[150px] flex-1 flex-col items-start gap-1">
                                     <label>Pos.Nr.:</label>
                                     <Input
@@ -587,32 +587,37 @@ export const XRechnung: Component = () => {
                                         onInputPath={handleInputChange}
                                         required
                                     />
-                                    {/* Additional item fields */}
-                                    <button type="button" onClick={() => removeItem(index())}>
-                                        Remove Item
+                                </div>
+                                <div class="">
+                                    <button
+                                        class="flex cursor-pointer rounded-full border-2 border-red-800 bg-red-800/30 px-8 py-1 text-xl text-red-950 hover:bg-red-800/40"
+                                        type="button"
+                                        onClick={() => removeItem(index())}
+                                    >
+                                        Löschen
                                     </button>
                                 </div>
                             </div>
                         )}
                     </For>
 
-                    <button type="button" onClick={addItem}>
-                        Add Item
-                    </button>
-
                     <div class="flex flex-row">
-                        <div class="flex-[2]"></div>
-                        <div class="flex-1">
-                            <div class="flex min-w-[150px] max-w-[300px] flex-1 flex-col items-start gap-1">
-                                <label>Tax Exclusive Amount</label>
+                        <div class="flex flex-[2] items-start">
+                            <button
+                                class="mt-2 flex cursor-pointer rounded-full border-2 border-green-800 bg-green-800/30 px-8 py-1 text-xl text-green-950 hover:bg-green-800/40"
+                                type="button"
+                                onClick={addItem}
+                            >
+                                Position hinzufügen
+                            </button>
+                        </div>
+                        <div class="flex-1 flex-col items-end text-xl">
+                            <div class="flex min-w-[150px] flex-1 flex-row justify-between gap-1">
+                                <label>Summe Netto:</label>
                                 <div>{Euro.format(getTaxExclusiveAmount())}</div>
                             </div>
-                            <div class="flex min-w-[150px] max-w-[300px] flex-1 flex-col items-start gap-1">
-                                <label>Tax Inclusive Amount</label>
-                                <div>{Euro.format(getTaxExclusiveAmount() * 1.19)}</div>
-                            </div>
-                            <div class="flex min-w-[150px] max-w-[300px] flex-1 flex-col items-start gap-1">
-                                <label>Payable Amount</label>
+                            <div class="flex min-w-[150px] flex-1 flex-row justify-between gap-1 font-bold">
+                                <label>Summe inkl. USt.:</label>
                                 <div>{Euro.format(getTaxExclusiveAmount() * 1.19)}</div>
                             </div>
                         </div>
@@ -717,12 +722,16 @@ export const XRechnung: Component = () => {
                         </div>
                     </div>
                 </div>
-                <button
-                    class="m-12 cursor-pointer rounded-full border-2 border-green-800 bg-green-800/30 px-12 py-4 text-xl text-green-950 hover:bg-green-800/40"
-                    type="submit"
-                >
-                    Speichern
-                </button>
+                <div class="flex flex-row justify-end">
+                    <div class="flex cursor-pointer">
+                        <button
+                            class="mt-8 flex cursor-pointer rounded-full border-2 border-green-800 bg-green-800/30 px-12 py-4 text-xl text-green-950 hover:bg-green-800/40"
+                            type="submit"
+                        >
+                            Speichern
+                        </button>
+                    </div>
+                </div>
             </form>
         </div>
     );
