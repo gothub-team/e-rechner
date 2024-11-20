@@ -2,7 +2,7 @@ import { Component, createSignal, For } from 'solid-js';
 import { createStore } from 'solid-js/store';
 import { create } from 'xmlbuilder2';
 import { Input } from './Input';
-import { CurrencyInput } from './CurrencyInput';
+import { CurrencyInput, Euro } from './CurrencyInput';
 
 export const XRechnung: Component = () => {
     const [formData, setFormData] = createStore({
@@ -559,15 +559,15 @@ export const XRechnung: Component = () => {
                 <h2>Monetary Totals</h2>
                 <div>
                     <label>Tax Exclusive Amount</label>
-                    <div>{getTaxExclusiveAmount().toFixed(2)} €</div>
+                    <div>{Euro.format(getTaxExclusiveAmount())}</div>
                 </div>
                 <div>
                     <label>Tax Inclusive Amount</label>
-                    <div>{(getTaxExclusiveAmount() * 1.19).toFixed(2)} €</div>
+                    <div>{Euro.format(getTaxExclusiveAmount() * 1.19)}</div>
                 </div>
                 <div>
                     <label>Payable Amount</label>
-                    <div>{(getTaxExclusiveAmount() * 1.19).toFixed(2)} €</div>
+                    <div>{Euro.format(getTaxExclusiveAmount() * 1.19)}</div>
                 </div>
 
                 <button type="submit">Generate XML</button>
