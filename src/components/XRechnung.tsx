@@ -362,7 +362,7 @@ export const XRechnung: Component = () => {
     }
 
     return (
-        <div>
+        <div class="container flex flex-col">
             <h1>Invoice Generator</h1>
             <form
                 onSubmit={(e) => {
@@ -372,59 +372,134 @@ export const XRechnung: Component = () => {
             >
                 <div>
                     <label>Invoice Number</label>
-                    <Input path="invoiceNumber" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="invoiceNumber"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>Issue Date</label>
-                    <Input path="issueDate" data={formData} type="date" onInputPath={handleInputChange} required />
+                    <Input
+                        path="issueDate"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        type="date"
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>Due Date</label>
-                    <Input path="dueDate" data={formData} type="date" onInputPath={handleInputChange} required />
+                    <Input
+                        path="dueDate"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        type="date"
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>Currency Code</label>
-                    <Input path="currencyCode" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="currencyCode"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>Buyer Reference</label>
-                    <Input path="buyerReference" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="buyerReference"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
 
                 <h2>Supplier Information</h2>
                 {/* Supplier Fields */}
                 <div>
                     <label>Supplier ID</label>
-                    <Input path="supplier.id" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="supplier.id"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>Supplier Name</label>
-                    <Input path="supplier.name" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="supplier.name"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>Street Name</label>
-                    <Input path="supplier.streetName" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="supplier.streetName"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>City Name</label>
-                    <Input path="supplier.cityName" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="supplier.cityName"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>Postal Zone</label>
-                    <Input path="supplier.postalZone" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="supplier.postalZone"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>Country Code</label>
-                    <Input path="supplier.country" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="supplier.country"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>VAT Number</label>
-                    <Input path="supplier.vatNumber" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="supplier.vatNumber"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>Registration Number</label>
                     <Input
                         path="supplier.registrationNumber"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
@@ -432,48 +507,108 @@ export const XRechnung: Component = () => {
                 </div>
                 <div>
                     <label>Legal Form</label>
-                    <Input path="supplier.legalForm" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="supplier.legalForm"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
 
                 <h3>Contact</h3>
                 <div>
                     <label>Name</label>
-                    <Input path="supplier.contact.name" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="supplier.contact.name"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>Phone</label>
-                    <Input path="supplier.contact.phone" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="supplier.contact.phone"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>E-Mail</label>
-                    <Input path="supplier.contact.email" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="supplier.contact.email"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
 
                 <h2>Customer Information</h2>
                 {/* Customer Fields */}
                 <div>
                     <label>Customer ID</label>
-                    <Input path="customer.id" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="customer.id"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>Customer Name</label>
-                    <Input path="customer.name" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="customer.name"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>Street Name</label>
-                    <Input path="customer.streetName" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="customer.streetName"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>City Name</label>
-                    <Input path="customer.cityName" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="customer.cityName"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>Postal Zone</label>
-                    <Input path="customer.postalZone" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="customer.postalZone"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
                 <div>
                     <label>Country Code</label>
-                    <Input path="customer.country" data={formData} onInputPath={handleInputChange} required />
+                    <Input
+                        path="customer.country"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        data={formData}
+                        onInputPath={handleInputChange}
+                        required
+                    />
                 </div>
 
                 <h2>Payment Means</h2>
@@ -481,6 +616,7 @@ export const XRechnung: Component = () => {
                     <label>Payment Means Code</label>
                     <Input
                         path="paymentMeans.paymentMeansCode"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
@@ -490,6 +626,7 @@ export const XRechnung: Component = () => {
                     <label>Payee Account ID</label>
                     <Input
                         path="paymentMeans.payeeFinancialAccount.id"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
@@ -499,6 +636,7 @@ export const XRechnung: Component = () => {
                     <label>Payee Account Name</label>
                     <Input
                         path="paymentMeans.payeeFinancialAccount.name"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
@@ -508,6 +646,7 @@ export const XRechnung: Component = () => {
                     <label>Financial Institution Branch ID</label>
                     <Input
                         path="paymentMeans.payeeFinancialAccount.financialInstitutionBranch"
+                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
@@ -521,6 +660,7 @@ export const XRechnung: Component = () => {
                             <label>Description</label>
                             <Input
                                 path={`items.${index()}.description`}
+                                class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
                                 data={formData}
                                 onInputPath={handleInputChange}
                                 required
@@ -529,6 +669,7 @@ export const XRechnung: Component = () => {
                             <label>Quantity</label>
                             <Input
                                 path={`items.${index()}.quantity`}
+                                class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
                                 data={formData}
                                 type="number"
                                 onInputPath={handleInputChange}
@@ -538,6 +679,7 @@ export const XRechnung: Component = () => {
                             <label>Unit Price</label>
                             <CurrencyInput
                                 path={`items.${index()}.unitPrice`}
+                                class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
                                 data={formData}
                                 type="text"
                                 onInputPath={handleInputChange}
