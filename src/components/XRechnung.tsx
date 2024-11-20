@@ -355,7 +355,8 @@ export const XRechnung: Component = () => {
     }
 
     return (
-        <div class="flex flex-col pt-12">
+        <div class="flex flex-col gap-8 pt-12">
+            <h1 class="text-3xl">Rechnung erstellen</h1>
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
@@ -590,7 +591,7 @@ export const XRechnung: Component = () => {
                                 </div>
                                 <div class="">
                                     <button
-                                        class="flex cursor-pointer rounded-full border-2 border-red-800 bg-red-800/20 px-8 py-1 text-xl text-red-950 hover:bg-red-800/30"
+                                        class="flex rounded-full border-2 border-red-800 bg-red-800/20 px-8 py-1 text-xl text-red-950 hover:bg-red-800/30"
                                         type="button"
                                         onClick={() => removeItem(index())}
                                     >
@@ -604,7 +605,7 @@ export const XRechnung: Component = () => {
                     <div class="flex flex-row">
                         <div class="flex flex-[2] items-start">
                             <button
-                                class="mt-2 flex cursor-pointer rounded-full border-2 border-green-800 bg-green-800/20 px-8 py-1 text-xl text-green-950 hover:bg-green-800/30"
+                                class="mt-2 flex rounded-full border-2 border-green-800 bg-green-800/20 px-8 py-1 text-xl text-green-950 hover:bg-green-800/30"
                                 type="button"
                                 onClick={addItem}
                             >
@@ -722,10 +723,25 @@ export const XRechnung: Component = () => {
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-row justify-end">
-                    <div class="flex cursor-pointer">
+                <div class="mt-8 flex flex-row items-start justify-end gap-8">
+                    <div class="flex flex-1 flex-col gap-4 text-sm">
+                        <p>
+                            Es wird empfohlen, einen Ordner für ausgehende und eingehende E-Rechnungen auf dem PC zu
+                            erstellen. Die hier erstellten Rechnungen können so bequem gespeichert und an Kunden
+                            versendet werden. Erstellte Rechnungen können außerdem mit dem{' '}
+                            <a class="text-blue-700 hover:underline" href="https://erechnungsvalidator.service-bw.de/">
+                                E-Rechnungs-Validator
+                            </a>{' '}
+                            auf dem Service Portal des Landes Baden-Württemberg überprüft werden.
+                        </p>
+                        <p>
+                            Künftig werden hier weitere Funktionen zum Öffnen und Überprüfen empfangener E-Rechnungen
+                            bereitgestellt.
+                        </p>
+                    </div>
+                    <div class="flex">
                         <button
-                            class="mt-8 flex cursor-pointer rounded-full border-2 border-green-800 bg-green-800/20 px-12 py-4 text-xl text-green-950 hover:bg-green-800/30"
+                            class="flex rounded-full border-2 border-green-800 bg-green-800/20 px-12 py-4 text-xl text-green-950 hover:bg-green-800/30"
                             type="submit"
                         >
                             Speichern
