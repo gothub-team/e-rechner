@@ -8,7 +8,7 @@ export const XRechnung: Component = () => {
     const [formData, setFormData] = createStore({
         invoiceNumber: '2025-00001',
         issueDate: new Date().toISOString().substring(0, 10),
-        dueDate: '2024-11-30',
+        dueDate: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString().substring(0, 10),
         currencyCode: 'EUR',
         buyerReference: '500001',
         supplier: {
@@ -366,7 +366,7 @@ export const XRechnung: Component = () => {
                     <div class="flex flex-col gap-4 min-[364px]:flex-row">
                         <div class="flex flex-[2] flex-col gap-4">
                             <div class="flex min-w-[150px] max-w-[300px] flex-1 flex-col items-start gap-1">
-                                <label>Rechnungsnummer:</label>
+                                <label class="text-black/60">Rechnungsnummer:</label>
                                 <Input
                                     path="invoiceNumber"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -376,7 +376,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] max-w-[300px] flex-1 flex-col items-start gap-1">
-                                <label>Kundennummer:</label>
+                                <label class="text-black/60">Kundennummer:</label>
                                 <Input
                                     path="buyerReference"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -389,7 +389,7 @@ export const XRechnung: Component = () => {
                         <div class="flex-1 sm:flex-[2] md:flex-[3]"></div>
                         <div class="flex flex-[2] flex-col gap-4">
                             <div class="flex min-w-[150px] max-w-[300px] flex-1 flex-col items-start gap-1">
-                                <label>Erstellungsdatum:</label>
+                                <label class="text-black/60">Erstellungsdatum:</label>
                                 <Input
                                     path="issueDate"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -400,7 +400,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] max-w-[300px] flex-1 flex-col items-start gap-1">
-                                <label>Fälligkeitsdatum:</label>
+                                <label class="text-black/60">Fälligkeitsdatum:</label>
                                 <Input
                                     path="dueDate"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -417,7 +417,7 @@ export const XRechnung: Component = () => {
                         <div class="flex flex-1 flex-col gap-4">
                             <h2 class="mt-12 text-left text-2xl">Käufer</h2>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>E-Mail:</label>
+                                <label class="text-black/60">E-Mail:</label>
                                 <Input
                                     path="customer.id"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -427,7 +427,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>Firmenname:</label>
+                                <label class="text-black/60">Firmenname:</label>
                                 <Input
                                     path="customer.name"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -437,7 +437,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>Adresszeile 1:</label>
+                                <label class="text-black/60">Adresszeile 1:</label>
                                 <Input
                                     path="customer.streetName"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -447,7 +447,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>Postleitzahl:</label>
+                                <label class="text-black/60">Postleitzahl:</label>
                                 <Input
                                     path="customer.postalZone"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -457,7 +457,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>Stadt:</label>
+                                <label class="text-black/60">Stadt:</label>
                                 <Input
                                     path="customer.cityName"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -467,7 +467,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>Land:</label>
+                                <label class="text-black/60">Land:</label>
                                 <Input
                                     path="customer.country"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -480,7 +480,7 @@ export const XRechnung: Component = () => {
                         <div class="flex flex-1 flex-col gap-4">
                             <h2 class="mt-12 text-left text-2xl">Verkäufer</h2>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>E-Mail:</label>
+                                <label class="text-black/60">E-Mail:</label>
                                 <Input
                                     path="supplier.id"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -490,7 +490,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>Firmenname:</label>
+                                <label class="text-black/60">Firmenname:</label>
                                 <Input
                                     path="supplier.name"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -500,7 +500,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>Adresszeile 1:</label>
+                                <label class="text-black/60">Adresszeile 1:</label>
                                 <Input
                                     path="supplier.streetName"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -510,7 +510,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>Postleitzahl:</label>
+                                <label class="text-black/60">Postleitzahl:</label>
                                 <Input
                                     path="supplier.postalZone"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -520,7 +520,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>Stadt:</label>
+                                <label class="text-black/60">Stadt:</label>
                                 <Input
                                     path="supplier.cityName"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -530,7 +530,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>Land:</label>
+                                <label class="text-black/60">Land:</label>
                                 <Input
                                     path="supplier.country"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -547,7 +547,7 @@ export const XRechnung: Component = () => {
                         {(item, index) => (
                             <div class="flex flex-row items-end gap-4">
                                 <div class="flex min-w-[150px] flex-1 flex-col items-start gap-1">
-                                    <label>Pos.Nr.:</label>
+                                    <label class="text-black/60">Pos.Nr.:</label>
                                     <Input
                                         path={`items.${index()}.number`}
                                         class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -557,7 +557,7 @@ export const XRechnung: Component = () => {
                                     />
                                 </div>
                                 <div class="flex min-w-[150px] flex-[3] flex-col items-start gap-1">
-                                    <label>Beschreibung:</label>
+                                    <label class="text-black/60">Beschreibung:</label>
                                     <Input
                                         path={`items.${index()}.description`}
                                         class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -567,7 +567,7 @@ export const XRechnung: Component = () => {
                                     />
                                 </div>
                                 <div class="flex min-w-[150px] flex-1 flex-col items-start gap-1">
-                                    <label>Menge:</label>
+                                    <label class="text-black/60">Menge:</label>
                                     <Input
                                         path={`items.${index()}.quantity`}
                                         class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -578,7 +578,7 @@ export const XRechnung: Component = () => {
                                     />
                                 </div>
                                 <div class="flex min-w-[150px] flex-1 flex-col items-start gap-1">
-                                    <label>Einzelpreis:</label>
+                                    <label class="text-black/60">Einzelpreis:</label>
                                     <CurrencyInput
                                         path={`items.${index()}.unitPrice`}
                                         class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -590,7 +590,7 @@ export const XRechnung: Component = () => {
                                 </div>
                                 <div class="">
                                     <button
-                                        class="flex cursor-pointer rounded-full border-2 border-red-800 bg-red-800/30 px-8 py-1 text-xl text-red-950 hover:bg-red-800/40"
+                                        class="flex cursor-pointer rounded-full border-2 border-red-800 bg-red-800/20 px-8 py-1 text-xl text-red-950 hover:bg-red-800/30"
                                         type="button"
                                         onClick={() => removeItem(index())}
                                     >
@@ -604,7 +604,7 @@ export const XRechnung: Component = () => {
                     <div class="flex flex-row">
                         <div class="flex flex-[2] items-start">
                             <button
-                                class="mt-2 flex cursor-pointer rounded-full border-2 border-green-800 bg-green-800/30 px-8 py-1 text-xl text-green-950 hover:bg-green-800/40"
+                                class="mt-2 flex cursor-pointer rounded-full border-2 border-green-800 bg-green-800/20 px-8 py-1 text-xl text-green-950 hover:bg-green-800/30"
                                 type="button"
                                 onClick={addItem}
                             >
@@ -613,11 +613,11 @@ export const XRechnung: Component = () => {
                         </div>
                         <div class="flex-1 flex-col items-end text-xl">
                             <div class="flex min-w-[150px] flex-1 flex-row justify-between gap-1">
-                                <label>Summe Netto:</label>
+                                <label class="text-black/60">Summe Netto:</label>
                                 <div>{Euro.format(getTaxExclusiveAmount())}</div>
                             </div>
                             <div class="flex min-w-[150px] flex-1 flex-row justify-between gap-1 font-bold">
-                                <label>Summe inkl. USt.:</label>
+                                <label class="text-black/60">Summe inkl. USt.:</label>
                                 <div>{Euro.format(getTaxExclusiveAmount() * 1.19)}</div>
                             </div>
                         </div>
@@ -626,7 +626,7 @@ export const XRechnung: Component = () => {
                     <div class="mt-12 flex flex-row gap-4">
                         <div class="flex flex-1 flex-col gap-4">
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>Zahlungsempfänger:</label>
+                                <label class="text-black/60">Zahlungsempfänger:</label>
                                 <Input
                                     path="paymentMeans.payeeFinancialAccount.name"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -636,7 +636,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>IBAN:</label>
+                                <label class="text-black/60">IBAN:</label>
                                 <Input
                                     path="paymentMeans.payeeFinancialAccount.id"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -646,7 +646,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>Kreditinstitut:</label>
+                                <label class="text-black/60">Kreditinstitut:</label>
                                 <Input
                                     path="paymentMeans.payeeFinancialAccount.financialInstitutionBranch"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -658,7 +658,7 @@ export const XRechnung: Component = () => {
                         </div>
                         <div class="flex flex-1 flex-col gap-4">
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>USt.ID.:</label>
+                                <label class="text-black/60">USt.ID.:</label>
                                 <Input
                                     path="supplier.vatNumber"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -668,7 +668,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>Handelsregisternr.:</label>
+                                <label class="text-black/60">Handelsregisternr.:</label>
                                 <Input
                                     path="supplier.registrationNumber"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -678,7 +678,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>Rechtliches:</label>
+                                <label class="text-black/60">Rechtliches:</label>
                                 <Input
                                     path="supplier.legalForm"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -690,7 +690,7 @@ export const XRechnung: Component = () => {
                         </div>
                         <div class="flex flex-1 flex-col gap-4">
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>Kontakt Name:</label>
+                                <label class="text-black/60">Kontakt Name:</label>
                                 <Input
                                     path="supplier.contact.name"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -700,7 +700,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>Kontakt Telefon:</label>
+                                <label class="text-black/60">Kontakt Telefon:</label>
                                 <Input
                                     path="supplier.contact.phone"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -710,7 +710,7 @@ export const XRechnung: Component = () => {
                                 />
                             </div>
                             <div class="flex min-w-[150px] flex-col items-start gap-1">
-                                <label>Kontakt E-Mail:</label>
+                                <label class="text-black/60">Kontakt E-Mail:</label>
                                 <Input
                                     path="supplier.contact.email"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
@@ -725,7 +725,7 @@ export const XRechnung: Component = () => {
                 <div class="flex flex-row justify-end">
                     <div class="flex cursor-pointer">
                         <button
-                            class="mt-8 flex cursor-pointer rounded-full border-2 border-green-800 bg-green-800/30 px-12 py-4 text-xl text-green-950 hover:bg-green-800/40"
+                            class="mt-8 flex cursor-pointer rounded-full border-2 border-green-800 bg-green-800/20 px-12 py-4 text-xl text-green-950 hover:bg-green-800/30"
                             type="submit"
                         >
                             Speichern
