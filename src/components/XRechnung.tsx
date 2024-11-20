@@ -362,368 +362,367 @@ export const XRechnung: Component = () => {
     }
 
     return (
-        <div class="flex flex-col">
-            <h1>Invoice Generator</h1>
+        <div class="flex flex-col pt-12">
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
                     generateXml();
                 }}
             >
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Invoice Number</label>
-                    <Input
-                        path="invoiceNumber"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Issue Date</label>
-                    <Input
-                        path="issueDate"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        type="date"
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Due Date</label>
-                    <Input
-                        path="dueDate"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        type="date"
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Currency Code</label>
-                    <Input
-                        path="currencyCode"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Buyer Reference</label>
-                    <Input
-                        path="buyerReference"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-
-                <h2>Supplier Information</h2>
-                {/* Supplier Fields */}
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Supplier ID</label>
-                    <Input
-                        path="supplier.id"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Supplier Name</label>
-                    <Input
-                        path="supplier.name"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Street Name</label>
-                    <Input
-                        path="supplier.streetName"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>City Name</label>
-                    <Input
-                        path="supplier.cityName"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Postal Zone</label>
-                    <Input
-                        path="supplier.postalZone"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Country Code</label>
-                    <Input
-                        path="supplier.country"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>VAT Number</label>
-                    <Input
-                        path="supplier.vatNumber"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Registration Number</label>
-                    <Input
-                        path="supplier.registrationNumber"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Legal Form</label>
-                    <Input
-                        path="supplier.legalForm"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-
-                <h3>Contact</h3>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Name</label>
-                    <Input
-                        path="supplier.contact.name"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Phone</label>
-                    <Input
-                        path="supplier.contact.phone"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>E-Mail</label>
-                    <Input
-                        path="supplier.contact.email"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-
-                <h2>Customer Information</h2>
-                {/* Customer Fields */}
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Customer ID</label>
-                    <Input
-                        path="customer.id"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Customer Name</label>
-                    <Input
-                        path="customer.name"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Street Name</label>
-                    <Input
-                        path="customer.streetName"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>City Name</label>
-                    <Input
-                        path="customer.cityName"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Postal Zone</label>
-                    <Input
-                        path="customer.postalZone"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Country Code</label>
-                    <Input
-                        path="customer.country"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-
-                <h2>Payment Means</h2>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Payment Means Code</label>
-                    <Input
-                        path="paymentMeans.paymentMeansCode"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Payee Account ID</label>
-                    <Input
-                        path="paymentMeans.payeeFinancialAccount.id"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Payee Account Name</label>
-                    <Input
-                        path="paymentMeans.payeeFinancialAccount.name"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Financial Institution Branch ID</label>
-                    <Input
-                        path="paymentMeans.payeeFinancialAccount.financialInstitutionBranch"
-                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
-                        data={formData}
-                        onInputPath={handleInputChange}
-                        required
-                    />
-                </div>
-
-                <h2>Items</h2>
-                <For each={formData.items}>
-                    {(item, index) => (
-                        <>
-                            <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                                <label>Description</label>
+                <div class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-4 min-[364px]:flex-row">
+                        <div class="flex flex-[2] flex-col gap-4">
+                            <div class="flex min-w-[150px] max-w-[300px] flex-1 flex-col items-start gap-1">
+                                <label>Rechnungsnummer:</label>
                                 <Input
-                                    path={`items.${index()}.description`}
+                                    path="invoiceNumber"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
                                 />
                             </div>
-                            <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                                <label>Quantity</label>
+                            <div class="flex min-w-[150px] max-w-[300px] flex-1 flex-col items-start gap-1">
+                                <label>Kundennummer:</label>
                                 <Input
-                                    path={`items.${index()}.quantity`}
+                                    path="buyerReference"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                                     data={formData}
-                                    type="number"
                                     onInputPath={handleInputChange}
                                     required
                                 />
                             </div>
-                            <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                                <label>Unit Price</label>
-                                <CurrencyInput
-                                    path={`items.${index()}.unitPrice`}
+                        </div>
+                        <div class="flex-1 sm:flex-[2] md:flex-[3]"></div>
+                        <div class="flex flex-[2] flex-col gap-4">
+                            <div class="flex min-w-[150px] max-w-[300px] flex-1 flex-col items-start gap-1">
+                                <label>Erstellungsdatum:</label>
+                                <Input
+                                    path="issueDate"
                                     class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                                     data={formData}
-                                    type="text"
+                                    type="date"
                                     onInputPath={handleInputChange}
                                     required
                                 />
-                                {/* Additional item fields */}
-                                <button type="button" onClick={() => removeItem(index())}>
-                                    Remove Item
-                                </button>
                             </div>
-                        </>
-                    )}
-                </For>
+                            <div class="flex min-w-[150px] max-w-[300px] flex-1 flex-col items-start gap-1">
+                                <label>Fälligkeitsdatum:</label>
+                                <Input
+                                    path="dueDate"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    type="date"
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                        </div>
+                    </div>
 
-                <button type="button" onClick={addItem}>
-                    Add Item
+                    <div class="flex flex-row gap-4 md:gap-12 lg:gap-24">
+                        <div class="flex flex-1 flex-col gap-4">
+                            <h2>Customer Information</h2>
+                            {/* Customer Fields */}
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>Customer ID</label>
+                                <Input
+                                    path="customer.id"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>Customer Name</label>
+                                <Input
+                                    path="customer.name"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>Street Name</label>
+                                <Input
+                                    path="customer.streetName"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>City Name</label>
+                                <Input
+                                    path="customer.cityName"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>Postal Zone</label>
+                                <Input
+                                    path="customer.postalZone"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>Country Code</label>
+                                <Input
+                                    path="customer.country"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div class="flex flex-1 flex-col gap-4">
+                            <h2>Supplier Information</h2>
+                            {/* Supplier Fields */}
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>Supplier ID</label>
+                                <Input
+                                    path="supplier.id"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>Supplier Name</label>
+                                <Input
+                                    path="supplier.name"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>Street Name</label>
+                                <Input
+                                    path="supplier.streetName"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>City Name</label>
+                                <Input
+                                    path="supplier.cityName"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>Postal Zone</label>
+                                <Input
+                                    path="supplier.postalZone"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>Country Code</label>
+                                <Input
+                                    path="supplier.country"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Items</h2>
+                    <For each={formData.items}>
+                        {(item, index) => (
+                            <div class="flex flex-row gap-4">
+                                <div class="flex min-w-[150px] flex-1 flex-col items-start gap-1">
+                                    <label>Description</label>
+                                    <Input
+                                        path={`items.${index()}.description`}
+                                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                        data={formData}
+                                        onInputPath={handleInputChange}
+                                        required
+                                    />
+                                </div>
+                                <div class="flex min-w-[150px] flex-1 flex-col items-start gap-1">
+                                    <label>Quantity</label>
+                                    <Input
+                                        path={`items.${index()}.quantity`}
+                                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                        data={formData}
+                                        type="number"
+                                        onInputPath={handleInputChange}
+                                        required
+                                    />
+                                </div>
+                                <div class="flex min-w-[150px] flex-1 flex-col items-start gap-1">
+                                    <label>Unit Price</label>
+                                    <CurrencyInput
+                                        path={`items.${index()}.unitPrice`}
+                                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                        data={formData}
+                                        type="text"
+                                        onInputPath={handleInputChange}
+                                        required
+                                    />
+                                    {/* Additional item fields */}
+                                    <button type="button" onClick={() => removeItem(index())}>
+                                        Remove Item
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                    </For>
+
+                    <button type="button" onClick={addItem}>
+                        Add Item
+                    </button>
+
+                    <h2>Monetary Totals</h2>
+                    <div class="flex min-w-[150px] max-w-[300px] flex-1 flex-col items-start gap-1">
+                        <label>Tax Exclusive Amount</label>
+                        <div>{Euro.format(getTaxExclusiveAmount())}</div>
+                    </div>
+                    <div class="flex min-w-[150px] max-w-[300px] flex-1 flex-col items-start gap-1">
+                        <label>Tax Inclusive Amount</label>
+                        <div>{Euro.format(getTaxExclusiveAmount() * 1.19)}</div>
+                    </div>
+                    <div class="flex min-w-[150px] max-w-[300px] flex-1 flex-col items-start gap-1">
+                        <label>Payable Amount</label>
+                        <div>{Euro.format(getTaxExclusiveAmount() * 1.19)}</div>
+                    </div>
+
+                    <div class="flex flex-row gap-4">
+                        <div class="flex flex-1 flex-col gap-4">
+                            <h2>Payment Means</h2>
+
+                            <div class="flex min-w-[150px] flex-1 flex-col items-start gap-1">
+                                <label>Payee Account ID</label>
+                                <Input
+                                    path="paymentMeans.payeeFinancialAccount.id"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex min-w-[150px] flex-1 flex-col items-start gap-1">
+                                <label>Payee Account Name</label>
+                                <Input
+                                    path="paymentMeans.payeeFinancialAccount.name"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex min-w-[150px] flex-1 flex-col items-start gap-1">
+                                <label>Financial Institution Branch ID</label>
+                                <Input
+                                    path="paymentMeans.payeeFinancialAccount.financialInstitutionBranch"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div class="flex flex-1 flex-col gap-4">
+                            <h2>Supplier Information</h2>
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>VAT Number</label>
+                                <Input
+                                    path="supplier.vatNumber"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>Registration Number</label>
+                                <Input
+                                    path="supplier.registrationNumber"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>Legal Form</label>
+                                <Input
+                                    path="supplier.legalForm"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div class="flex flex-1 flex-col gap-4">
+                            <h3>Contact</h3>
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>Name</label>
+                                <Input
+                                    path="supplier.contact.name"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>Phone</label>
+                                <Input
+                                    path="supplier.contact.phone"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex min-w-[150px] flex-col items-start gap-1">
+                                <label>E-Mail</label>
+                                <Input
+                                    path="supplier.contact.email"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    class="m-12 cursor-pointer rounded-full border-2 border-green-800 bg-green-800/30 px-12 py-4 text-xl text-green-950 hover:bg-green-800/40"
+                    type="submit"
+                >
+                    Speichern
                 </button>
-
-                <h2>Monetary Totals</h2>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Tax Exclusive Amount</label>
-                    <div>{Euro.format(getTaxExclusiveAmount())}</div>
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Tax Inclusive Amount</label>
-                    <div>{Euro.format(getTaxExclusiveAmount() * 1.19)}</div>
-                </div>
-                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
-                    <label>Payable Amount</label>
-                    <div>{Euro.format(getTaxExclusiveAmount() * 1.19)}</div>
-                </div>
-
-                <button type="submit">Generate XML</button>
             </form>
-
-            {xmlOutput() && (
-                <div>
-                    <h2>Generated XML</h2>
-                    <pre style={{ 'text-align': 'left' }}>{xmlOutput()}</pre>
-                </div>
-            )}
         </div>
     );
 };
