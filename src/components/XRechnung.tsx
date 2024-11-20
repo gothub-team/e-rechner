@@ -1,8 +1,9 @@
-import { createSignal, For } from 'solid-js';
+import { Component, createSignal, For } from 'solid-js';
 import { createStore } from 'solid-js/store';
 import { create } from 'xmlbuilder2';
+import { Input } from './Input';
 
-export const XRechnung = () => {
+export const XRechnung: Component = () => {
     const [formData, setFormData] = createStore({
         invoiceNumber: 'TEST',
         issueDate: '2024-11-19',
@@ -62,11 +63,11 @@ export const XRechnung = () => {
         formData.items.map((item) => item.quantity * item.unitPrice).reduce((a, b) => a + b, 0);
 
     const handleInputChange = (path: string, value: unknown) => {
+        console.log(path, typeof value);
         const keys: unknown[] = path.split('.');
         keys.push(value);
         // @ts-ignore
         setFormData(...keys);
-        console.log(formData);
     };
 
     const addItem = () => {
@@ -370,238 +371,144 @@ export const XRechnung = () => {
             >
                 <div>
                     <label>Invoice Number</label>
-                    <input
-                        value={formData.invoiceNumber}
-                        onInput={(e) => handleInputChange('invoiceNumber', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="invoiceNumber" data={formData} onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>Issue Date</label>
-                    <input
-                        type="date"
-                        value={formData.issueDate}
-                        onInput={(e) => handleInputChange('issueDate', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="issueDate" data={formData} type="date" onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>Due Date</label>
-                    <input
-                        type="date"
-                        value={formData.dueDate}
-                        onInput={(e) => handleInputChange('dueDate', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="dueDate" data={formData} type="date" onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>Currency Code</label>
-                    <input
-                        value={formData.currencyCode}
-                        onInput={(e) => handleInputChange('currencyCode', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="currencyCode" data={formData} onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>Buyer Reference</label>
-                    <input
-                        value={formData.buyerReference}
-                        onInput={(e) => handleInputChange('buyerReference', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="buyerReference" data={formData} onInputPath={handleInputChange} required />
                 </div>
 
                 <h2>Supplier Information</h2>
                 {/* Supplier Fields */}
                 <div>
                     <label>Supplier ID</label>
-                    <input
-                        value={formData.supplier.id}
-                        onInput={(e) => handleInputChange('supplier.id', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="supplier.id" data={formData} onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>Supplier Name</label>
-                    <input
-                        value={formData.supplier.name}
-                        onInput={(e) => handleInputChange('supplier.name', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="supplier.name" data={formData} onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>Street Name</label>
-                    <input
-                        value={formData.supplier.streetName}
-                        onInput={(e) => handleInputChange('supplier.streetName', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="supplier.streetName" data={formData} onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>City Name</label>
-                    <input
-                        value={formData.supplier.cityName}
-                        onInput={(e) => handleInputChange('supplier.cityName', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="supplier.cityName" data={formData} onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>Postal Zone</label>
-                    <input
-                        value={formData.supplier.postalZone}
-                        onInput={(e) => handleInputChange('supplier.postalZone', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="supplier.postalZone" data={formData} onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>Country Code</label>
-                    <input
-                        value={formData.supplier.country}
-                        onInput={(e) => handleInputChange('supplier.country', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="supplier.country" data={formData} onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>VAT Number</label>
-                    <input
-                        value={formData.supplier.vatNumber}
-                        onInput={(e) => handleInputChange('supplier.vatNumber', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="supplier.vatNumber" data={formData} onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>Registration Number</label>
-                    <input
-                        value={formData.supplier.registrationNumber}
-                        onInput={(e) => handleInputChange('supplier.registrationNumber', e.currentTarget.value)}
+                    <Input
+                        path="supplier.registrationNumber"
+                        data={formData}
+                        onInputPath={handleInputChange}
                         required
                     />
                 </div>
                 <div>
                     <label>Legal Form</label>
-                    <input
-                        value={formData.supplier.legalForm}
-                        onInput={(e) => handleInputChange('supplier.legalForm', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="supplier.legalForm" data={formData} onInputPath={handleInputChange} required />
                 </div>
 
                 <h3>Contact</h3>
                 <div>
                     <label>Name</label>
-                    <input
-                        value={formData.supplier.contact.name}
-                        onInput={(e) => handleInputChange('supplier.contact.name', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="supplier.contact.name" data={formData} onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>Phone</label>
-                    <input
-                        value={formData.supplier.contact.phone}
-                        onInput={(e) => handleInputChange('supplier.contact.phone', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="supplier.contact.phone" data={formData} onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>E-Mail</label>
-                    <input
-                        value={formData.supplier.contact.email}
-                        onInput={(e) => handleInputChange('supplier.contact.email', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="supplier.contact.email" data={formData} onInputPath={handleInputChange} required />
                 </div>
 
                 <h2>Customer Information</h2>
                 {/* Customer Fields */}
                 <div>
                     <label>Customer ID</label>
-                    <input
-                        value={formData.customer.id}
-                        onInput={(e) => handleInputChange('customer.id', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="customer.id" data={formData} onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>Customer Name</label>
-                    <input
-                        value={formData.customer.name}
-                        onInput={(e) => handleInputChange('customer.name', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="customer.name" data={formData} onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>Street Name</label>
-                    <input
-                        value={formData.customer.streetName}
-                        onInput={(e) => handleInputChange('customer.streetName', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="customer.streetName" data={formData} onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>City Name</label>
-                    <input
-                        value={formData.customer.cityName}
-                        onInput={(e) => handleInputChange('customer.cityName', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="customer.cityName" data={formData} onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>Postal Zone</label>
-                    <input
-                        value={formData.customer.postalZone}
-                        onInput={(e) => handleInputChange('customer.postalZone', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="customer.postalZone" data={formData} onInputPath={handleInputChange} required />
                 </div>
                 <div>
                     <label>Country Code</label>
-                    <input
-                        value={formData.customer.country}
-                        onInput={(e) => handleInputChange('customer.country', e.currentTarget.value)}
-                        required
-                    />
+                    <Input path="customer.country" data={formData} onInputPath={handleInputChange} required />
                 </div>
 
                 <h2>Payment Means</h2>
                 <div>
                     <label>Payment Means Code</label>
-                    <input
-                        value={formData.paymentMeans.paymentMeansCode}
-                        onInput={(e) => handleInputChange('paymentMeans.paymentMeansCode', e.currentTarget.value)}
+                    <Input
+                        path="paymentMeans.paymentMeansCode"
+                        data={formData}
+                        onInputPath={handleInputChange}
                         required
                     />
                 </div>
                 <div>
                     <label>Payee Account ID</label>
-                    <input
-                        value={formData.paymentMeans.payeeFinancialAccount.id}
-                        onInput={(e) =>
-                            handleInputChange('paymentMeans.payeeFinancialAccount.id', e.currentTarget.value)
-                        }
+                    <Input
+                        path="paymentMeans.payeeFinancialAccount.id"
+                        data={formData}
+                        onInputPath={handleInputChange}
                         required
                     />
                 </div>
                 <div>
                     <label>Payee Account Name</label>
-                    <input
-                        value={formData.paymentMeans.payeeFinancialAccount.name}
-                        onInput={(e) =>
-                            handleInputChange('paymentMeans.payeeFinancialAccount.name', e.currentTarget.value)
-                        }
+                    <Input
+                        path="paymentMeans.payeeFinancialAccount.name"
+                        data={formData}
+                        onInputPath={handleInputChange}
                         required
                     />
                 </div>
                 <div>
                     <label>Financial Institution Branch ID</label>
-                    <input
-                        value={formData.paymentMeans.payeeFinancialAccount.financialInstitutionBranch}
-                        onInput={(e) =>
-                            handleInputChange(
-                                'paymentMeans.payeeFinancialAccount.financialInstitutionBranch',
-                                e.currentTarget.value,
-                            )
-                        }
+                    <Input
+                        path="paymentMeans.payeeFinancialAccount.financialInstitutionBranch"
+                        data={formData}
+                        onInputPath={handleInputChange}
                         required
                     />
                 </div>
@@ -611,32 +518,29 @@ export const XRechnung = () => {
                     {(item, index) => (
                         <div>
                             <label>Description</label>
-                            <input
-                                value={item.description}
-                                onInput={(e) =>
-                                    handleInputChange(`items.${index()}.description`, e.currentTarget.value)
-                                }
+                            <Input
+                                path={`items.${index()}.description`}
+                                data={formData}
+                                onInputPath={handleInputChange}
                                 required
                             />
 
                             <label>Quantity</label>
-                            <input
+                            <Input
+                                path={`items.${index()}.quantity`}
+                                data={formData}
                                 type="number"
-                                value={item.quantity}
-                                onInput={(e) =>
-                                    handleInputChange(`items.${index()}.quantity`, parseFloat(e.currentTarget.value))
-                                }
+                                onInputPath={handleInputChange}
                                 required
                             />
 
                             <label>Unit Price</label>
-                            <input
+                            <Input
+                                path={`items.${index()}.unitPrice`}
+                                data={formData}
                                 type="number"
                                 step="0.01"
-                                value={item.unitPrice}
-                                onInput={(e) =>
-                                    handleInputChange(`items.${index()}.unitPrice`, parseFloat(e.currentTarget.value))
-                                }
+                                onInputPath={handleInputChange}
                                 required
                             />
 
