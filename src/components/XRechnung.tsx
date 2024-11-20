@@ -293,7 +293,7 @@ export const XRechnung: Component = () => {
             invoice
                 .ele('cac:InvoiceLine')
                 .ele('cbc:ID')
-                .txt(item.description)
+                .txt(item.number)
                 .up()
                 .ele('cbc:InvoicedQuantity', { unitCode: 'XPP' })
                 .txt(item.quantity.toString())
