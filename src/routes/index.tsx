@@ -7,7 +7,7 @@ export default function Home() {
             <Title>E-Rechner</Title>
             <div class="flex flex-col items-center">
                 <div class="container mb-12 max-w-[1000px]">
-                    <div class="mt-24 flex flex-row items-start gap-12">
+                    <div class="mt-36 flex flex-row items-start gap-12">
                         <div class="flex flex-col gap-4">
                             <h1 class="text-6xl">E-Rechner</h1>
                             <p class="text-2xl italic">

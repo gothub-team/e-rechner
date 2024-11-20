@@ -370,7 +370,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Rechnungsnummer:</label>
                                 <Input
                                     path="invoiceNumber"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -380,7 +380,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Kundennummer:</label>
                                 <Input
                                     path="buyerReference"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -393,7 +393,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Erstellungsdatum:</label>
                                 <Input
                                     path="issueDate"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     type="date"
                                     onInputPath={handleInputChange}
@@ -404,7 +404,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Fälligkeitsdatum:</label>
                                 <Input
                                     path="dueDate"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     type="date"
                                     onInputPath={handleInputChange}
@@ -421,7 +421,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">E-Mail:</label>
                                 <Input
                                     path="customer.id"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -431,7 +431,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Firmenname:</label>
                                 <Input
                                     path="customer.name"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -441,7 +441,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Adresszeile 1:</label>
                                 <Input
                                     path="customer.streetName"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -451,7 +451,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Postleitzahl:</label>
                                 <Input
                                     path="customer.postalZone"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -461,7 +461,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Stadt:</label>
                                 <Input
                                     path="customer.cityName"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -471,7 +471,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Land:</label>
                                 <Input
                                     path="customer.country"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -484,7 +484,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">E-Mail:</label>
                                 <Input
                                     path="supplier.id"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -494,7 +494,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Firmenname:</label>
                                 <Input
                                     path="supplier.name"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -504,7 +504,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Adresszeile 1:</label>
                                 <Input
                                     path="supplier.streetName"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -514,7 +514,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Postleitzahl:</label>
                                 <Input
                                     path="supplier.postalZone"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -524,7 +524,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Stadt:</label>
                                 <Input
                                     path="supplier.cityName"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -534,7 +534,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Land:</label>
                                 <Input
                                     path="supplier.country"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -551,7 +551,7 @@ export const XRechnung: Component = () => {
                                     <label class="text-black/60">Pos.Nr.:</label>
                                     <Input
                                         path={`items.${index()}.number`}
-                                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                        class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                         data={formData}
                                         onInputPath={handleInputChange}
                                         required
@@ -561,7 +561,7 @@ export const XRechnung: Component = () => {
                                     <label class="text-black/60">Beschreibung:</label>
                                     <Input
                                         path={`items.${index()}.description`}
-                                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                        class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                         data={formData}
                                         onInputPath={handleInputChange}
                                         required
@@ -571,7 +571,7 @@ export const XRechnung: Component = () => {
                                     <label class="text-black/60">Menge:</label>
                                     <Input
                                         path={`items.${index()}.quantity`}
-                                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                        class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                         data={formData}
                                         type="number"
                                         onInputPath={handleInputChange}
@@ -582,7 +582,7 @@ export const XRechnung: Component = () => {
                                     <label class="text-black/60">Einzelpreis:</label>
                                     <CurrencyInput
                                         path={`items.${index()}.unitPrice`}
-                                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                        class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                         data={formData}
                                         type="text"
                                         onInputPath={handleInputChange}
@@ -591,7 +591,7 @@ export const XRechnung: Component = () => {
                                 </div>
                                 <div class="">
                                     <button
-                                        class="flex rounded-full border-2 border-red-800 bg-red-800/20 px-8 py-1 text-xl text-red-950 hover:bg-red-800/30"
+                                        class="flex rounded-full border-2 border-red-800 bg-red-100/70 px-8 py-1 text-xl text-red-950 hover:bg-red-200/60"
                                         type="button"
                                         onClick={() => removeItem(index())}
                                     >
@@ -605,7 +605,7 @@ export const XRechnung: Component = () => {
                     <div class="flex flex-row">
                         <div class="flex flex-[2] items-start">
                             <button
-                                class="mt-2 flex rounded-full border-2 border-green-800 bg-green-800/20 px-8 py-1 text-xl text-green-950 hover:bg-green-800/30"
+                                class="mt-2 flex rounded-full border-2 border-green-800 bg-green-100/70 px-8 py-1 text-xl text-green-950 hover:bg-green-200/60"
                                 type="button"
                                 onClick={addItem}
                             >
@@ -630,7 +630,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Zahlungsempfänger:</label>
                                 <Input
                                     path="paymentMeans.payeeFinancialAccount.name"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -640,7 +640,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">IBAN:</label>
                                 <Input
                                     path="paymentMeans.payeeFinancialAccount.id"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -650,7 +650,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Kreditinstitut:</label>
                                 <Input
                                     path="paymentMeans.payeeFinancialAccount.financialInstitutionBranch"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -662,7 +662,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">USt.ID.:</label>
                                 <Input
                                     path="supplier.vatNumber"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -672,7 +672,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Handelsregisternr.:</label>
                                 <Input
                                     path="supplier.registrationNumber"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -682,7 +682,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Rechtliches:</label>
                                 <Input
                                     path="supplier.legalForm"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -694,7 +694,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Kontakt Name:</label>
                                 <Input
                                     path="supplier.contact.name"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -704,7 +704,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Kontakt Telefon:</label>
                                 <Input
                                     path="supplier.contact.phone"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -714,7 +714,7 @@ export const XRechnung: Component = () => {
                                 <label class="text-black/60">Kontakt E-Mail:</label>
                                 <Input
                                     path="supplier.contact.email"
-                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50"
+                                    class="w-full rounded-md border border-cyan-950/20 bg-stone-100/80 px-1 py-1 outline-none focus:border-cyan-950/50"
                                     data={formData}
                                     onInputPath={handleInputChange}
                                     required
@@ -741,7 +741,7 @@ export const XRechnung: Component = () => {
                     </div>
                     <div class="flex">
                         <button
-                            class="flex rounded-full border-2 border-green-800 bg-green-800/20 px-12 py-4 text-xl text-green-950 hover:bg-green-800/30"
+                            class="flex rounded-full border-2 border-green-800 bg-green-100/70 px-12 py-4 text-xl text-green-950 hover:bg-green-200/60"
                             type="submit"
                         >
                             Speichern
