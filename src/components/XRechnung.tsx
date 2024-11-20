@@ -370,7 +370,7 @@ export const XRechnung: Component = () => {
                     generateXml();
                 }}
             >
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Invoice Number</label>
                     <Input
                         path="invoiceNumber"
@@ -380,7 +380,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Issue Date</label>
                     <Input
                         path="issueDate"
@@ -391,7 +391,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Due Date</label>
                     <Input
                         path="dueDate"
@@ -402,7 +402,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Currency Code</label>
                     <Input
                         path="currencyCode"
@@ -412,7 +412,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Buyer Reference</label>
                     <Input
                         path="buyerReference"
@@ -425,7 +425,7 @@ export const XRechnung: Component = () => {
 
                 <h2>Supplier Information</h2>
                 {/* Supplier Fields */}
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Supplier ID</label>
                     <Input
                         path="supplier.id"
@@ -435,7 +435,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Supplier Name</label>
                     <Input
                         path="supplier.name"
@@ -445,7 +445,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Street Name</label>
                     <Input
                         path="supplier.streetName"
@@ -455,7 +455,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>City Name</label>
                     <Input
                         path="supplier.cityName"
@@ -465,7 +465,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Postal Zone</label>
                     <Input
                         path="supplier.postalZone"
@@ -475,7 +475,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Country Code</label>
                     <Input
                         path="supplier.country"
@@ -485,7 +485,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>VAT Number</label>
                     <Input
                         path="supplier.vatNumber"
@@ -495,7 +495,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Registration Number</label>
                     <Input
                         path="supplier.registrationNumber"
@@ -505,7 +505,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Legal Form</label>
                     <Input
                         path="supplier.legalForm"
@@ -517,7 +517,7 @@ export const XRechnung: Component = () => {
                 </div>
 
                 <h3>Contact</h3>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Name</label>
                     <Input
                         path="supplier.contact.name"
@@ -527,7 +527,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Phone</label>
                     <Input
                         path="supplier.contact.phone"
@@ -537,7 +537,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>E-Mail</label>
                     <Input
                         path="supplier.contact.email"
@@ -550,7 +550,7 @@ export const XRechnung: Component = () => {
 
                 <h2>Customer Information</h2>
                 {/* Customer Fields */}
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Customer ID</label>
                     <Input
                         path="customer.id"
@@ -560,7 +560,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Customer Name</label>
                     <Input
                         path="customer.name"
@@ -570,7 +570,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Street Name</label>
                     <Input
                         path="customer.streetName"
@@ -580,7 +580,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>City Name</label>
                     <Input
                         path="customer.cityName"
@@ -590,7 +590,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Postal Zone</label>
                     <Input
                         path="customer.postalZone"
@@ -600,7 +600,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Country Code</label>
                     <Input
                         path="customer.country"
@@ -612,7 +612,7 @@ export const XRechnung: Component = () => {
                 </div>
 
                 <h2>Payment Means</h2>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Payment Means Code</label>
                     <Input
                         path="paymentMeans.paymentMeansCode"
@@ -622,7 +622,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Payee Account ID</label>
                     <Input
                         path="paymentMeans.payeeFinancialAccount.id"
@@ -632,7 +632,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Payee Account Name</label>
                     <Input
                         path="paymentMeans.payeeFinancialAccount.name"
@@ -642,7 +642,7 @@ export const XRechnung: Component = () => {
                         required
                     />
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Financial Institution Branch ID</label>
                     <Input
                         path="paymentMeans.payeeFinancialAccount.financialInstitutionBranch"
@@ -657,7 +657,7 @@ export const XRechnung: Component = () => {
                 <For each={formData.items}>
                     {(item, index) => (
                         <>
-                            <div class="flex flex-col items-start justify-stretch">
+                            <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                                 <label>Description</label>
                                 <Input
                                     path={`items.${index()}.description`}
@@ -667,7 +667,7 @@ export const XRechnung: Component = () => {
                                     required
                                 />
                             </div>
-                            <div class="flex flex-col items-start justify-stretch">
+                            <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                                 <label>Quantity</label>
                                 <Input
                                     path={`items.${index()}.quantity`}
@@ -678,7 +678,7 @@ export const XRechnung: Component = () => {
                                     required
                                 />
                             </div>
-                            <div class="flex flex-col items-start justify-stretch">
+                            <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                                 <label>Unit Price</label>
                                 <CurrencyInput
                                     path={`items.${index()}.unitPrice`}
@@ -702,15 +702,15 @@ export const XRechnung: Component = () => {
                 </button>
 
                 <h2>Monetary Totals</h2>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Tax Exclusive Amount</label>
                     <div>{Euro.format(getTaxExclusiveAmount())}</div>
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Tax Inclusive Amount</label>
                     <div>{Euro.format(getTaxExclusiveAmount() * 1.19)}</div>
                 </div>
-                <div class="flex flex-col items-start justify-stretch">
+                <div class="flex min-w-[150px] flex-col items-start justify-stretch">
                     <label>Payable Amount</label>
                     <div>{Euro.format(getTaxExclusiveAmount() * 1.19)}</div>
                 </div>
