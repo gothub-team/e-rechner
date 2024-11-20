@@ -362,7 +362,7 @@ export const XRechnung: Component = () => {
     }
 
     return (
-        <div class="container flex flex-col">
+        <div class="flex flex-col">
             <h1>Invoice Generator</h1>
             <form
                 onSubmit={(e) => {
@@ -370,53 +370,53 @@ export const XRechnung: Component = () => {
                     generateXml();
                 }}
             >
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Invoice Number</label>
                     <Input
                         path="invoiceNumber"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Issue Date</label>
                     <Input
                         path="issueDate"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         type="date"
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Due Date</label>
                     <Input
                         path="dueDate"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         type="date"
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Currency Code</label>
                     <Input
                         path="currencyCode"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Buyer Reference</label>
                     <Input
                         path="buyerReference"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
@@ -425,91 +425,91 @@ export const XRechnung: Component = () => {
 
                 <h2>Supplier Information</h2>
                 {/* Supplier Fields */}
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Supplier ID</label>
                     <Input
                         path="supplier.id"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Supplier Name</label>
                     <Input
                         path="supplier.name"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Street Name</label>
                     <Input
                         path="supplier.streetName"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>City Name</label>
                     <Input
                         path="supplier.cityName"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Postal Zone</label>
                     <Input
                         path="supplier.postalZone"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Country Code</label>
                     <Input
                         path="supplier.country"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>VAT Number</label>
                     <Input
                         path="supplier.vatNumber"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Registration Number</label>
                     <Input
                         path="supplier.registrationNumber"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Legal Form</label>
                     <Input
                         path="supplier.legalForm"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
@@ -517,31 +517,31 @@ export const XRechnung: Component = () => {
                 </div>
 
                 <h3>Contact</h3>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Name</label>
                     <Input
                         path="supplier.contact.name"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Phone</label>
                     <Input
                         path="supplier.contact.phone"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>E-Mail</label>
                     <Input
                         path="supplier.contact.email"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
@@ -550,61 +550,61 @@ export const XRechnung: Component = () => {
 
                 <h2>Customer Information</h2>
                 {/* Customer Fields */}
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Customer ID</label>
                     <Input
                         path="customer.id"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Customer Name</label>
                     <Input
                         path="customer.name"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Street Name</label>
                     <Input
                         path="customer.streetName"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>City Name</label>
                     <Input
                         path="customer.cityName"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Postal Zone</label>
                     <Input
                         path="customer.postalZone"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Country Code</label>
                     <Input
                         path="customer.country"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
@@ -612,41 +612,41 @@ export const XRechnung: Component = () => {
                 </div>
 
                 <h2>Payment Means</h2>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Payment Means Code</label>
                     <Input
                         path="paymentMeans.paymentMeansCode"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Payee Account ID</label>
                     <Input
                         path="paymentMeans.payeeFinancialAccount.id"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Payee Account Name</label>
                     <Input
                         path="paymentMeans.payeeFinancialAccount.name"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
                     />
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Financial Institution Branch ID</label>
                     <Input
                         path="paymentMeans.payeeFinancialAccount.financialInstitutionBranch"
-                        class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
+                        class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
                         data={formData}
                         onInputPath={handleInputChange}
                         required
@@ -656,41 +656,44 @@ export const XRechnung: Component = () => {
                 <h2>Items</h2>
                 <For each={formData.items}>
                     {(item, index) => (
-                        <div>
-                            <label>Description</label>
-                            <Input
-                                path={`items.${index()}.description`}
-                                class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
-                                data={formData}
-                                onInputPath={handleInputChange}
-                                required
-                            />
-
-                            <label>Quantity</label>
-                            <Input
-                                path={`items.${index()}.quantity`}
-                                class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
-                                data={formData}
-                                type="number"
-                                onInputPath={handleInputChange}
-                                required
-                            />
-
-                            <label>Unit Price</label>
-                            <CurrencyInput
-                                path={`items.${index()}.unitPrice`}
-                                class="border border-cyan-950/20 bg-cyan-950/5 m-2 px-1 py-1 outline-none rounded-md focus:shadow-md focus:border-cyan-950/50"
-                                data={formData}
-                                type="text"
-                                onInputPath={handleInputChange}
-                                required
-                            />
-
-                            {/* Additional item fields */}
-                            <button type="button" onClick={() => removeItem(index())}>
-                                Remove Item
-                            </button>
-                        </div>
+                        <>
+                            <div class="flex flex-col items-start justify-stretch">
+                                <label>Description</label>
+                                <Input
+                                    path={`items.${index()}.description`}
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex flex-col items-start justify-stretch">
+                                <label>Quantity</label>
+                                <Input
+                                    path={`items.${index()}.quantity`}
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    type="number"
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div class="flex flex-col items-start justify-stretch">
+                                <label>Unit Price</label>
+                                <CurrencyInput
+                                    path={`items.${index()}.unitPrice`}
+                                    class="w-full rounded-md border border-cyan-950/20 bg-cyan-950/5 px-1 py-1 outline-none focus:border-cyan-950/50 focus:shadow-md"
+                                    data={formData}
+                                    type="text"
+                                    onInputPath={handleInputChange}
+                                    required
+                                />
+                                {/* Additional item fields */}
+                                <button type="button" onClick={() => removeItem(index())}>
+                                    Remove Item
+                                </button>
+                            </div>
+                        </>
                     )}
                 </For>
 
@@ -699,15 +702,15 @@ export const XRechnung: Component = () => {
                 </button>
 
                 <h2>Monetary Totals</h2>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Tax Exclusive Amount</label>
                     <div>{Euro.format(getTaxExclusiveAmount())}</div>
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Tax Inclusive Amount</label>
                     <div>{Euro.format(getTaxExclusiveAmount() * 1.19)}</div>
                 </div>
-                <div>
+                <div class="flex flex-col items-start justify-stretch">
                     <label>Payable Amount</label>
                     <div>{Euro.format(getTaxExclusiveAmount() * 1.19)}</div>
                 </div>
